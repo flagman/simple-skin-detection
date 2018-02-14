@@ -12,7 +12,7 @@ The algorithm is based on [this paper here] and consists of two main steps
 Implemented in MATLAB and OpenCV (Python)
 
 ### Sample Results
-  ![](images/sample_results.jpg?raw=true)
+![sample result](images/sample_results.png?raw=true)
 
 ### License
 MIT,  see LICENSE.md for details
