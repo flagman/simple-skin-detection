@@ -37,8 +37,9 @@ img_face_only = segment_otsu(img_grayscale, img_BGR)
 display_image(img_face_only, "segmented BGR")
 
 # convert to HSV and YCrCb color spaces and detect potential pixels
-img_HSV = cv2.cvtColor(img_face_only, cv2.COLOR_BGR2HSV)
-img_YCrCb = cv2.cvtColor(img_face_only, cv2.COLOR_BGR2YCrCb)
+img_HSV = cv2.cvtColor(img_face_only.astype(np.uint8), cv2.COLOR_BGR2HSV)
+img_YCrCb = cv2.cvtColor(img_face_only.astype(np.uint8), cv2.COLOR_BGR2YCrCb)
+
 display_image(img_HSV, "HSV")
 display_image(img_YCrCb, "YCrCb")
 
@@ -62,4 +63,4 @@ display_image(img_face_only, "final segmentation")
 
 # determine mean skin tone estimate
 skin_tone_estimate_BGR = [np.mean(blue), np.mean(green), np.mean(red)]
-print "mean skin tone estimate (BGR)", skin_tone_estimate_BGR[0], skin_tone_estimate_BGR[1], skin_tone_estimate_BGR[2], "]"
+print("mean skin tone estimate (BGR)", skin_tone_estimate_BGR[0], skin_tone_estimate_BGR[1], skin_tone_estimate_BGR[2], "]")
